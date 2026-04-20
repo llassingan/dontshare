@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-  --bg-color: #050505;
-  --text-color: #e0e0e0;
+  --bg-color: #030303;
+  --text-color: #d0d0d0;
   --glitch-color-1: #ff003c;
   --glitch-color-2: #00eaff;
 }
@@ -20,5 +20,24 @@ body {
   min-height: 100vh;
   overflow: hidden;
   background-image: 
-    radial-gradient(circle at 50% 50%, rgba(20, 20, 25, 1) 0%, rgba(5, 5, 5, 1) 100%);
+    radial-gradient(circle at 50% 50%, rgba(10, 10, 15, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+/* Mysterious scanlines effect */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 100;
 }
